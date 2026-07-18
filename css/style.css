@@ -1,0 +1,56 @@
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #111827;
+}
+
+h1,
+h2 {
+  font-family: "Manrope", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Header */
+header {
+  height: 5rem;
+  padding: 0rem 2rem;
+  background-color: #f9ece5;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #111827;
+}
+
+/* Main */
+main {
+  padding: 0 3rem;
+}

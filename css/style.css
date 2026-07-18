@@ -54,3 +54,23 @@ nav a {
 main {
   padding: 0 3rem;
 }
+
+.carousel {
+  background-color: #eef2f7;
+  padding: 2rem;
+}
+
+.carousel-box {
+  display: flex;
+  gap: 2rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 20rem;
+  padding: 1.25rem;
+  background-color: #f9ece5;
+  border-radius: 0.75rem;
+}

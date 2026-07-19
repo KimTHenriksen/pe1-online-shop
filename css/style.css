@@ -65,6 +65,17 @@ main {
   gap: 2rem;
 }
 
+.carousel-card {
+  width: 20rem;
+  background-color: #f9ece5;
+  border-radius: 0.75rem;
+}
+
+.carousel-card img {
+  width: 100%;
+  display: block;
+}
+
 .product-card {
   display: flex;
   flex-direction: column;

@@ -45,9 +45,13 @@ function rendergridProducts(products) {
     const price = document.createElement("p");
     price.textContent = `$${product.price}`;
 
+    const button = document.createElement("button");
+    button.textContent = "View Product";
+
     card.appendChild(image);
     card.appendChild(title);
     card.appendChild(price);
+    card.appendChild(button);
 
     productGrid.appendChild(card);
   });
@@ -69,8 +73,16 @@ function renderCarousel(products) {
     const title = document.createElement("h2");
     title.textContent = product.title;
 
+    const price = document.createElement("p");
+    price.textContent = `$${product.price}`;
+
+    const button = document.createElement("button");
+    button.textContent = "View Product";
+
     card.appendChild(image);
     card.appendChild(title);
+    card.appendChild(price);
+    card.appendChild(button);
     carouselBox.appendChild(card);
   });
 }

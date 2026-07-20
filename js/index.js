@@ -110,3 +110,13 @@ async function fetchProducts() {
 }
 
 fetchProducts();
+
+nextButton.addEventListener("click", () => {
+  currentIndex++;
+  renderCarousel(carouselProducts);
+});
+
+previousButton.addEventListener("click", () => {
+  currentIndex--;
+  renderCarousel(carouselProducts);
+});

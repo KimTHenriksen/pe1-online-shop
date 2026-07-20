@@ -112,11 +112,12 @@ async function fetchProducts() {
 fetchProducts();
 
 nextButton.addEventListener("click", () => {
-  currentIndex++;
+  currentIndex = (currentIndex + 1) % carouselProducts.length;
   renderCarousel(carouselProducts);
 });
 
 previousButton.addEventListener("click", () => {
-  currentIndex--;
+  currentIndex =
+    (currentIndex - 1 + carouselProducts.length) % carouselProducts.length;
   renderCarousel(carouselProducts);
 });

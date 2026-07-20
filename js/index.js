@@ -23,6 +23,42 @@ const carouselProductsIds = [
 
 const productGrid = document.querySelector(".grid-products");
 const carouselBox = document.querySelector(".carousel-box");
+const previousButton = document.querySelector(".carousel-left");
+const nextButton = document.querySelector(".carousel-right");
+
+let carouselProducts = [];
+let currentIndex = 0;
+
+function renderCarousel(products) {
+  carouselBox.innerHTML = "";
+
+  for (let i = 0; i < 3; i++) {
+    const index = (currentIndex + i) % products.length;
+    const product = products[index];
+
+    const card = document.createElement("div");
+    card.classList.add("carousel-card");
+
+    const image = document.createElement("img");
+    image.src = product.image.url;
+    image.alt = product.image.alt;
+
+    const title = document.createElement("h2");
+    title.textContent = product.title;
+
+    const price = document.createElement("p");
+    price.textContent = `$${product.price}`;
+
+    const button = document.createElement("button");
+    button.textContent = "View Product";
+
+    card.appendChild(image);
+    card.appendChild(title);
+    card.appendChild(price);
+    card.appendChild(button);
+    carouselBox.appendChild(card);
+  }
+}
 
 function rendergridProducts(products) {
   productGrid.innerHTML = "";
@@ -57,42 +93,16 @@ function rendergridProducts(products) {
   });
 }
 
-function renderCarousel(products) {
-  carouselBox.innerHTML = "";
-
-  carouselProductsIds.forEach((id) => {
-    const product = products.find((product) => product.id === id);
-
-    const card = document.createElement("div");
-    card.classList.add("carousel-card");
-
-    const image = document.createElement("img");
-    image.src = product.image.url;
-    image.alt = product.image.alt;
-
-    const title = document.createElement("h2");
-    title.textContent = product.title;
-
-    const price = document.createElement("p");
-    price.textContent = `$${product.price}`;
-
-    const button = document.createElement("button");
-    button.textContent = "View Product";
-
-    card.appendChild(image);
-    card.appendChild(title);
-    card.appendChild(price);
-    card.appendChild(button);
-    carouselBox.appendChild(card);
-  });
-}
-
 async function fetchProducts() {
   try {
     const response = await fetch(API_URL);
     const data = await response.json();
 
-    renderCarousel(data.data);
+    carouselProducts = data.data.filter((product) =>
+      gridProductsIds.includes(product.id),
+    );
+
+    renderCarousel(carouselProducts);
     rendergridProducts(data.data);
   } catch (error) {
     console.error(error);

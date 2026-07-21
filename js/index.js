@@ -53,6 +53,10 @@ function renderCarousel(products) {
     button.classList.add("secondary-button");
     button.textContent = "View Product";
 
+    button.addEventListener("click", () => {
+      window.location.href = `product/index.html?id=${product.id}`;
+    });
+
     card.appendChild(image);
     card.appendChild(title);
     card.appendChild(price);

@@ -1,5 +1,7 @@
+/* API */
 const API_URL = "https://v2.api.noroff.dev/online-shop";
 
+/* Product IDs */
 const gridProductsIds = [
   "159fdd2f-2b12-46de-9654-d9139525ba87",
   "3b43b2e4-62b0-4c02-9166-dffa46a0388c",
@@ -21,14 +23,18 @@ const carouselProductsIds = [
   "31e3a66f-2dbe-47ae-b80d-d9e5814f3e32",
 ];
 
+/* DOM */
 const productGrid = document.querySelector(".grid-products");
 const carouselBox = document.querySelector(".carousel-box");
 const previousButton = document.querySelector(".carousel-left");
 const nextButton = document.querySelector(".carousel-right");
+const loadingMessage = document.querySelector(".loading-message");
 
+/* Carousel State */
 let carouselProducts = [];
 let currentIndex = 0;
 
+/* Render Carousel */
 function renderCarousel(products) {
   carouselBox.innerHTML = "";
 
@@ -65,7 +71,30 @@ function renderCarousel(products) {
   }
 }
 
-function rendergridProducts(products) {
+/* Carousel Animate */
+function animateCarousel() {
+  carouselBox.classList.add("fade");
+
+  setTimeout(() => {
+    renderCarousel(carouselProducts);
+    carouselBox.classList.remove("fade");
+  }, 300);
+}
+
+/* Carousel Navigation */
+nextButton.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % carouselProducts.length;
+  animateCarousel();
+});
+
+previousButton.addEventListener("click", () => {
+  currentIndex =
+    (currentIndex - 1 + carouselProducts.length) % carouselProducts.length;
+  animateCarousel();
+});
+
+/* Render Product Grid */
+function renderGridProducts(products) {
   productGrid.innerHTML = "";
 
   const gridProducts = products.filter((product) =>
@@ -80,6 +109,10 @@ function rendergridProducts(products) {
     image.src = product.image.url;
     image.alt = product.image.alt;
 
+    image.addEventListener("click", () => {
+      window.location.href = `product/index.html?id=${product.id}`;
+    });
+
     const title = document.createElement("h2");
     title.textContent = product.title;
 
@@ -90,6 +123,10 @@ function rendergridProducts(products) {
     button.classList.add("secondary-button");
     button.textContent = "View Product";
 
+    button.addEventListener("click", () => {
+      window.location.href = `product/index.html?id=${product.id}`;
+    });
+
     card.appendChild(image);
     card.appendChild(title);
     card.appendChild(price);
@@ -99,31 +136,24 @@ function rendergridProducts(products) {
   });
 }
 
+/* Fetch Products */
 async function fetchProducts() {
+  loadingMessage.style.display = "block";
   try {
     const response = await fetch(API_URL);
     const data = await response.json();
 
     carouselProducts = data.data.filter((product) =>
-      gridProductsIds.includes(product.id),
+      carouselProductsIds.includes(product.id),
     );
 
     renderCarousel(carouselProducts);
-    rendergridProducts(data.data);
+    renderGridProducts(data.data);
+
+    loadingMessage.style.display = "none";
   } catch (error) {
     console.error(error);
   }
 }
 
 fetchProducts();
-
-nextButton.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % carouselProducts.length;
-  renderCarousel(carouselProducts);
-});
-
-previousButton.addEventListener("click", () => {
-  currentIndex =
-    (currentIndex - 1 + carouselProducts.length) % carouselProducts.length;
-  renderCarousel(carouselProducts);
-});

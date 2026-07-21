@@ -2,11 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width-device-width, initial-scale-1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Specific Product Page</title>
 
-    <link rel="stylesheet" href="../css/product.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/product.css" />
   </head>
   <body>
     <main class="product-page">
@@ -14,24 +21,25 @@
         <div class="product-image"></div>
 
         <div class="product-info">
-          <h1>Product Title</h1>
-          <p class="description">Description</p>
+          <h1 class="product-title"></h1>
           <p class="product-description"></p>
+
+          <div class="product-price">
+            <p class="price"></p>
+            <p class="discounted-price"></p>
+          </div>
+
+          <div class="product-rating"></div>
+          <div class="product-tags"></div>
         </div>
-
-        <div class="product-price">
-          <p class="price">$449.99</p>
-          <p class="dicounted-price">$382.49</p>
-        </div>
-
-        <div class="rating">Rating</div>
-        <div class="tags">Tags</div>
-
-        <button class="primary-button">Add to Cart</button>
       </section>
 
-      <section class="reviews">Reviews</section>
+      <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="reviews-container"></div>
+      </section>
+      <button class="primary-button add-to-cart">Add to Cart</button>
     </main>
-    <script src="../js/product.js"></script>
+    <script type="module" src="../js/product.js"></script>
   </body>
 </html>

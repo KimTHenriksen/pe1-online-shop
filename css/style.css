@@ -20,6 +20,36 @@ h1 {
   color: #111827;
 }
 
+/* Buttons */
+.primary-button {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background-color: #1d4ed8;
+}
+
+.secondary-button {
+  height: 3rem;
+  background: #fff;
+  border: 2px solid #2563eb;
+  border-radius: 0.5rem;
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  background-color: #2563eb;
+  color: #fff;
+}
 /* Header */
 header {
   height: 5rem;
@@ -113,20 +143,7 @@ main {
   color: #111827;
 }
 
-.carousel-card button,
-.product-card button {
-  height: 3rem;
-  background: #fff;
-  border: 2px solid #2563eb;
-  border-radius: 0.5rem;
-  font-family: "Manrope", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #2563eb;
-  cursor: pointer;
-}
-
-.carousel-card button {
+.carousel-card .secondary-button {
   width: 17.5rem;
   margin-top: auto;
 }
@@ -171,7 +188,7 @@ main {
   margin: 0 auto 1rem;
 }
 
-.product-card button {
+.product-card .secondary-button {
   width: 9.3125rem;
   margin-top: 1rem;
 }

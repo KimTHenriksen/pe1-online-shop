@@ -50,6 +50,7 @@ function renderCarousel(products) {
     price.textContent = `$${product.price}`;
 
     const button = document.createElement("button");
+    button.classList.add("secondary-button");
     button.textContent = "View Product";
 
     card.appendChild(image);
@@ -82,6 +83,7 @@ function rendergridProducts(products) {
     price.textContent = `$${product.price}`;
 
     const button = document.createElement("button");
+    button.classList.add("secondary-button");
     button.textContent = "View Product";
 
     card.appendChild(image);

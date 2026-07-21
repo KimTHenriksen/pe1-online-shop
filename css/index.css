@@ -122,13 +122,18 @@
   margin-top: 1rem;
 }
 
-/* Loading message */
-.loading-message {
+/* Loading & error message */
+.loading-message,
+.error-message {
   display: none;
   text-align: center;
   font-family: "Manrope", sans-serif;
   font-size: 1.25rem;
   padding: 2rem;
+}
+
+.error-message {
+  color: #dc2624;
 }
 
 /* Responsive Product Feed Page */

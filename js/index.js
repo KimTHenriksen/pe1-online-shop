@@ -29,6 +29,7 @@ const carouselBox = document.querySelector(".carousel-box");
 const previousButton = document.querySelector(".carousel-left");
 const nextButton = document.querySelector(".carousel-right");
 const loadingMessage = document.querySelector(".loading-message");
+const errorMessage = document.querySelector(".error-message");
 
 /* Carousel State */
 let carouselProducts = [];
@@ -139,8 +140,13 @@ function renderGridProducts(products) {
 /* Fetch Products */
 async function fetchProducts() {
   loadingMessage.style.display = "block";
+
   try {
     const response = await fetch(API_URL);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch products");
+    }
     const data = await response.json();
 
     carouselProducts = data.data.filter((product) =>
@@ -153,6 +159,9 @@ async function fetchProducts() {
     loadingMessage.style.display = "none";
   } catch (error) {
     console.error(error);
+
+    loadingMessage.style.display = "none";
+    errorMessage.style.display = "block";
   }
 }
 

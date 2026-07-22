@@ -24,6 +24,17 @@
   padding: 10px;
 }
 
+.product-tags-share {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviews {
+  max-width: 992px;
+  margin: 2rem auto 0;
+}
+
 /* Typography */
 .product-title {
   font-size: 48px;
@@ -31,6 +42,7 @@
 
 .standard-price {
   text-decoration: line-through;
+  font-size: 16px;
 }
 
 .discounted-price {
@@ -41,6 +53,11 @@
 }
 
 /* Components */
+
+.product-rating {
+  font-size: 16px;
+  color: #f59e0b;
+}
 .product-tags {
   display: flex;
   gap: 0.5rem;
@@ -50,4 +67,49 @@
   padding: 0.25rem 0.75rem;
   background-color: #f9ece5;
   border-radius: 16px;
+}
+
+.product-share {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.product-share img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.add-to-cart {
+  width: 160px;
+  height: 48px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .product-details {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .product-image {
+    width: 320px;
+  }
+
+  .product-image img {
+    width: 100%;
+  }
+
+  .product-title {
+    font-size: 32px;
+  }
+
+  .add-to-cart {
+    width: 100%;
+    max-width: 320px;
+    align-self: center;
+  }
 }

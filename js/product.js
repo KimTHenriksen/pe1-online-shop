@@ -11,6 +11,7 @@ const productRating = document.querySelector(".product-rating");
 const productTags = document.querySelector(".product-tags");
 const reviewsContainer = document.querySelector(".reviews-container");
 const addToCartButton = document.querySelector(".add-to-cart");
+const shareButton = document.querySelector(".product-share");
 
 const queryString = window.location.search;
 
@@ -39,7 +40,7 @@ async function fetchProduct() {
     productPrice.classList.add("standard-price");
   }
 
-  productRating.textContent = `★${product.rating}/5`;
+  productRating.textContent = `★ ${product.rating}/5`;
 
   product.tags.forEach((tag) => {
     const tagElement = document.createElement("span");
@@ -55,7 +56,7 @@ async function fetchProduct() {
     username.textContent = review.username;
 
     const rating = document.createElement("p");
-    rating.textContent = `★${product.rating}/5`;
+    rating.textContent = `★ ${review.rating}`;
 
     const description = document.createElement("p");
     description.textContent = review.description;
@@ -69,3 +70,8 @@ async function fetchProduct() {
 }
 
 fetchProduct();
+
+shareButton.addEventListener("click", () => {
+  navigator.clipboard.writeText(window.location.href);
+  alert("Link copied to clipboard");
+});

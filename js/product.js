@@ -12,6 +12,7 @@ const productTags = document.querySelector(".product-tags");
 const reviewsContainer = document.querySelector(".reviews-container");
 const addToCartButton = document.querySelector(".add-to-cart");
 const shareButton = document.querySelector(".product-share");
+const shareMessage = document.querySelector(".share-message");
 
 const queryString = window.location.search;
 
@@ -73,5 +74,10 @@ fetchProduct();
 
 shareButton.addEventListener("click", () => {
   navigator.clipboard.writeText(window.location.href);
-  alert("Link copied to clipboard");
+
+  shareMessage.textContent = "Link copied";
+
+  setTimeout(() => {
+    shareMessage.textContent = "";
+  }, 2500);
 });

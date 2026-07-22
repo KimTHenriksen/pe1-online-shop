@@ -30,6 +30,12 @@
   align-items: center;
 }
 
+.share-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .reviews {
   max-width: 992px;
   margin: 2rem auto 0;
@@ -85,6 +91,12 @@
 .add-to-cart {
   width: 160px;
   height: 48px;
+}
+
+.share-message {
+  font-size: 14px;
+  color: #2563eb;
+  min-height: 16px;
 }
 
 /* Mobile */

@@ -13,6 +13,8 @@ const reviewsContainer = document.querySelector(".reviews-container");
 const addToCartButton = document.querySelector(".add-to-cart");
 const shareButton = document.querySelector(".product-share");
 const shareMessage = document.querySelector(".share-message");
+const loadingMessage = document.querySelector(".loading-message");
+const errorMessage = document.querySelector(".error-message");
 
 const queryString = window.location.search;
 
@@ -20,54 +22,68 @@ const searchParams = new URLSearchParams(queryString);
 const productId = searchParams.get("id");
 
 async function fetchProduct() {
-  const response = await fetch(`${API_URL}/${productId}`);
-  const data = await response.json();
+  loadingMessage.style.display = "block";
 
-  const product = data.data;
+  try {
+    const response = await fetch(`${API_URL}/${productId}`);
 
-  productTitle.textContent = product.title;
+    if (!response.ok) {
+      throw new Error("Failed to fetch product");
+    }
 
-  const image = document.createElement("img");
-  image.src = product.image.url;
-  image.alt = product.image.alt;
-  productImage.appendChild(image);
+    const data = await response.json();
 
-  productDescription.textContent = product.description;
+    const product = data.data;
 
-  productPrice.textContent = `$${product.price}`;
+    productTitle.textContent = product.title;
 
-  if (product.discountedPrice < product.price) {
-    discountedPrice.textContent = `$${product.discountedPrice}`;
-    productPrice.classList.add("standard-price");
+    const image = document.createElement("img");
+    image.src = product.image.url;
+    image.alt = product.image.alt;
+    productImage.appendChild(image);
+
+    productDescription.textContent = product.description;
+
+    productPrice.textContent = `$${product.price}`;
+
+    if (product.discountedPrice < product.price) {
+      discountedPrice.textContent = `$${product.discountedPrice}`;
+      productPrice.classList.add("standard-price");
+    }
+
+    productRating.textContent = `★ ${product.rating}/5`;
+
+    product.tags.forEach((tag) => {
+      const tagElement = document.createElement("span");
+      tagElement.textContent = tag;
+      productTags.appendChild(tagElement);
+    });
+
+    product.reviews.forEach((review) => {
+      const reviewElement = document.createElement("div");
+      reviewElement.classList.add("review");
+
+      const username = document.createElement("h3");
+      username.textContent = review.username;
+
+      const rating = document.createElement("p");
+      rating.textContent = `★ ${review.rating}`;
+
+      const description = document.createElement("p");
+      description.textContent = review.description;
+
+      reviewElement.appendChild(username);
+      reviewElement.appendChild(rating);
+      reviewElement.appendChild(description);
+
+      reviewsContainer.appendChild(reviewElement);
+    });
+
+    loadingMessage.style.display = "none";
+  } catch (error) {
+    loadingMessage.style.display = "none";
+    errorMessage.style.display = "block";
   }
-
-  productRating.textContent = `★ ${product.rating}/5`;
-
-  product.tags.forEach((tag) => {
-    const tagElement = document.createElement("span");
-    tagElement.textContent = tag;
-    productTags.appendChild(tagElement);
-  });
-
-  product.reviews.forEach((review) => {
-    const reviewElement = document.createElement("div");
-    reviewElement.classList.add("review");
-
-    const username = document.createElement("h3");
-    username.textContent = review.username;
-
-    const rating = document.createElement("p");
-    rating.textContent = `★ ${review.rating}`;
-
-    const description = document.createElement("p");
-    description.textContent = review.description;
-
-    reviewElement.appendChild(username);
-    reviewElement.appendChild(rating);
-    reviewElement.appendChild(description);
-
-    reviewsContainer.appendChild(reviewElement);
-  });
 }
 
 fetchProduct();

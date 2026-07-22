@@ -17,8 +17,6 @@ const queryString = window.location.search;
 const searchParams = new URLSearchParams(queryString);
 const productId = searchParams.get("id");
 
-console.log(productId);
-
 async function fetchProduct() {
   const response = await fetch(`${API_URL}/${productId}`);
   const data = await response.json();
@@ -36,7 +34,38 @@ async function fetchProduct() {
 
   productPrice.textContent = `$${product.price}`;
 
-  console.log(image.alt);
+  if (product.discountedPrice < product.price) {
+    discountedPrice.textContent = `$${product.discountedPrice}`;
+    productPrice.classList.add("standard-price");
+  }
+
+  productRating.textContent = `★${product.rating}/5`;
+
+  product.tags.forEach((tag) => {
+    const tagElement = document.createElement("span");
+    tagElement.textContent = tag;
+    productTags.appendChild(tagElement);
+  });
+
+  product.reviews.forEach((review) => {
+    const reviewElement = document.createElement("div");
+    reviewElement.classList.add("review");
+
+    const username = document.createElement("h3");
+    username.textContent = review.username;
+
+    const rating = document.createElement("p");
+    rating.textContent = `★${product.rating}/5`;
+
+    const description = document.createElement("p");
+    description.textContent = review.description;
+
+    reviewElement.appendChild(username);
+    reviewElement.appendChild(rating);
+    reviewElement.appendChild(description);
+
+    reviewsContainer.appendChild(reviewElement);
+  });
 }
 
 fetchProduct();

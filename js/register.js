@@ -7,6 +7,7 @@ const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 const registerMessage = document.querySelector("#registerMessage");
+const registerButton = document.querySelector("#registerButton");
 
 registerForm.addEventListener("submit", registerUser);
 
@@ -25,6 +26,9 @@ async function registerUser(event) {
 
   registerMessage.textContent = "";
 
+  registerButton.disabled = true;
+  registerButton.textContent = "Registering..";
+
   const response = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -32,6 +36,9 @@ async function registerUser(event) {
   });
 
   const data = await response.json();
+
+  registerButton.disabled = false;
+  registerButton.textContent = "Registering...";
 
   if (response.ok) {
     window.location.href = "login.html";

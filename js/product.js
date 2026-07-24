@@ -36,6 +36,7 @@ async function fetchProduct() {
     }
 
     const data = await response.json();
+    console.log(data);
 
     product = data.data;
 
@@ -105,6 +106,12 @@ shareButton.addEventListener("click", () => {
 
 /* Add to Cart */
 addToCartButton.addEventListener("click", () => {
+  const accessToken = localStorage.getItem("accessToken");
+  if (!accessToken) {
+    alert("You need to log in to add products.");
+    return;
+  }
+
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   const productInCart = cart.find((item) => item.id === product.id);

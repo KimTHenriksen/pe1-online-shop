@@ -51,6 +51,18 @@ cart.forEach((product) => {
   increaseButton.textContent = "+";
   cartItem.appendChild(increaseButton);
 
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Remove";
+  cartItem.appendChild(removeButton);
+
+  removeButton.addEventListener("click", () => {
+    const updatedCart = cart.filter((item) => item.id !== product.id);
+
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+    location.reload();
+  });
+
   increaseButton.addEventListener("click", () => {
     product.quantity++;
 

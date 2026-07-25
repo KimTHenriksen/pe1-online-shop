@@ -5,7 +5,22 @@ const totalPrice = document.querySelector(".total-price");
 
 /* Cart */
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
-console.log(cart);
+
+let total = 0;
+
+/* Update total */
+function updateTotal() {
+  total = 0;
+
+  cart.forEach((product) => {
+    total += product.price * product.quantity;
+  });
+
+  subtotal.textContent = `$${total.toFixed(2)}`;
+  totalPrice.textContent = `$${total.toFixed(2)}`;
+}
+
+/* Render Cart */
 
 cart.forEach((product) => {
   const cartItem = document.createElement("div");
@@ -42,6 +57,8 @@ cart.forEach((product) => {
     quantity.textContent = `Quantity: ${product.quantity}`;
 
     localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateTotal();
   });
 
   decreaseButton.addEventListener("click", () => {
@@ -51,8 +68,12 @@ cart.forEach((product) => {
       quantity.textContent = `Quantity: ${product.quantity}`;
 
       localStorage.setItem("cart", JSON.stringify(cart));
+
+      updateTotal();
     }
   });
 
   cartItems.appendChild(cartItem);
 });
+
+updateTotal();

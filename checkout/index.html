@@ -103,6 +103,52 @@
               <img src="../images/creditcard.svg" alt="" />
               Credit Card
             </label>
+            <div class="card-form">
+              <label for="cardholder-name">Cardholder Name</label>
+              <input
+                type="text"
+                id="cardholder-name"
+                name="cardholder-name"
+                placeholder="Cardholder Name"
+                required
+              />
+
+              <label for="card-number">Card Number</label>
+              <input
+                type="text"
+                id="card-number"
+                name="card-number"
+                placeholder="Card Number"
+                required
+              />
+
+              <div class="card-details">
+                <div class="card-field expiry-field">
+                  <label for="expiry-date">Expiry Date</label>
+                  <input
+                    type="text"
+                    id="expiry-date"
+                    name="expiry-date"
+                    placeholder="MM/YY"
+                    required
+                  />
+                </div>
+                <div class="card-field cvv-field">
+                  <label for="cvv">CVV</label>
+                  <input
+                    type="text"
+                    id="cvv"
+                    name="cvv"
+                    placeholder="CVV"
+                    required
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="primary-button">
+                Complete Purchase
+              </button>
+            </div>
           </form>
         </section>
       </div>

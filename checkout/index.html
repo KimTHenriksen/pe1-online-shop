@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/checkout.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="../index.html" class="logo">
+          <img src="../images/Logo.svg" alt="Online Shop" />
+        </a>
+        <ul>
+          <li><a href="../index.html">Products</a></li>
+          <li><a href="../cart/index.html">Cart</a></li>
+          <li><a href="../account/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="checkout-page">
+      <h1>Checkout</h1>
+      <div class="checkout-box">
+        <section class="checkout-card">
+          <h2>Delivery Address</h2>
+
+          <form class="account-form payment-form">
+            <label for="full-name">Full Name</label>
+            <input
+              type="text"
+              id="full-name"
+              name="full-name"
+              placeholder="Full Name"
+              required
+            />
+
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+
+            <label for="address">Address</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Address"
+              required
+            />
+
+            <label for="city">City</label>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              placeholder="City"
+              required
+            />
+
+            <label for="postal-code">Postal Code</label>
+            <input
+              type="text"
+              id="postal-code"
+              name="postal-code"
+              placeholder="Postal Code"
+              required
+            />
+          </form>
+        </section>
+
+        <section class="checkout-card">
+          <h2>Payment Method</h2>
+          <form class="payment-form">
+            <label class="payment-option">
+              <input type="radio" name="payment-method" value="paypal" />
+              <img src="../images/paypal.svg" alt="" />
+              PayPal
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="payment-method" value="google-pay" />
+              <img src="../images/googlepay.svg" alt="" />
+              Google Pay
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="payment-method" value="credit-card" />
+              <img src="../images/creditcard.svg" alt="" />
+              Credit Card
+            </label>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="checkout.js"></script>
+  </body>
+</html>

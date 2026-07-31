@@ -15,6 +15,7 @@ const shareButton = document.querySelector(".product-share");
 const shareMessage = document.querySelector(".share-message");
 const loadingMessage = document.querySelector(".loading-message");
 const errorMessage = document.querySelector(".error-message");
+const cartMessage = document.querySelector(".cart-message");
 
 /* URL */
 const queryString = window.location.search;
@@ -126,4 +127,10 @@ addToCartButton.addEventListener("click", () => {
 
     localStorage.setItem("cart", JSON.stringify(cart));
   }
+
+  cartMessage.textContent = "Product added";
+
+  setTimeout(() => {
+    cartMessage.textContent = "";
+  }, 1500);
 });

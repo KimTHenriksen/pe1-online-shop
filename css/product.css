@@ -58,6 +58,12 @@
   color: #2563eb;
 }
 
+.cart-message {
+  margin-top: 0.75rem;
+  color: #16a34f;
+  font-weight: 400;
+  min-height: 1.5rem;
+}
 /* Components */
 
 .product-rating {

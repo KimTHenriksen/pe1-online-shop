@@ -85,9 +85,15 @@
 
         <section class="checkout-card">
           <h2>Payment Method</h2>
-          <form class="payment-form">
+          <form id="payment-form" class="payment-form">
             <label class="payment-option">
-              <input type="radio" name="payment-method" value="paypal" />
+              <input
+                type="radio"
+                name="payment-method"
+                value="paypal"
+                required
+              />
+
               <img src="../images/paypal.svg" alt="" />
               PayPal
             </label>
@@ -154,6 +160,6 @@
       </div>
     </main>
 
-    <script type="module" src="checkout.js"></script>
+    <script type="module" src="../js/checkout.js"></script>
   </body>
 </html>

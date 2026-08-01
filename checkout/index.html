@@ -31,11 +31,11 @@
     </header>
     <main class="checkout-page">
       <h1>Checkout</h1>
-      <div class="checkout-box">
-        <section class="checkout-card">
-          <h2>Delivery Address</h2>
+      <form id="payment-form">
+        <div class="checkout-box">
+          <section class="checkout-card">
+            <h2>Delivery Address</h2>
 
-          <form class="account-form payment-form">
             <label for="full-name">Full Name</label>
             <input
               type="text"
@@ -80,18 +80,17 @@
               placeholder="Postal Code"
               required
             />
-          </form>
-        </section>
+          </section>
 
-        <section class="checkout-card">
-          <h2>Payment Method</h2>
-          <form id="payment-form" class="payment-form">
+          <section class="checkout-card">
+            <h2>Payment Method</h2>
+
             <label class="payment-option">
               <input
                 type="radio"
+                id="paypal"
                 name="payment-method"
                 value="paypal"
-                required
               />
 
               <img src="../images/paypal.svg" alt="" />
@@ -99,16 +98,27 @@
             </label>
 
             <label class="payment-option">
-              <input type="radio" name="payment-method" value="google-pay" />
+              <input
+                type="radio"
+                id="google-pay"
+                name="payment-method"
+                value="google-pay"
+              />
               <img src="../images/googlepay.svg" alt="" />
               Google Pay
             </label>
 
             <label class="payment-option">
-              <input type="radio" name="payment-method" value="credit-card" />
+              <input
+                type="radio"
+                id="credit-card"
+                name="payment-method"
+                value="credit-card"
+              />
               <img src="../images/creditcard.svg" alt="" />
               Credit Card
             </label>
+            <p class="message"></p>
             <div class="card-form">
               <label for="cardholder-name">Cardholder Name</label>
               <input
@@ -155,9 +165,9 @@
                 Complete Purchase
               </button>
             </div>
-          </form>
-        </section>
-      </div>
+          </section>
+        </div>
+      </form>
     </main>
 
     <script type="module" src="../js/checkout.js"></script>

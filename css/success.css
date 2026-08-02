@@ -30,3 +30,29 @@
 .success-card .primary-button {
   text-decoration: none;
 }
+
+@media (max-width: 700px) {
+  .success-page {
+    padding: 2ewm 1 rem;
+  }
+
+  .success-page h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .success-card {
+    max-width: 357px;
+    padding: 24px;
+    gap: 1.5rem;
+  }
+
+  .success-card img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .success-card .primary-button {
+    width: 177px;
+    text-align: center;
+  }
+}

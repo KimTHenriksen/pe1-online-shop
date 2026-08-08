@@ -148,3 +148,17 @@ main {
 .message {
   color: red;
 }
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #f9ece5;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}

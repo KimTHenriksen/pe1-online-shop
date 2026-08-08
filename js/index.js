@@ -39,7 +39,17 @@ let currentIndex = 0;
 function renderCarousel(products) {
   carouselBox.innerHTML = "";
 
-  for (let i = 0; i < 3; i++) {
+  let numberOfCards;
+
+  if (window.innerWidth < 768) {
+    numberOfCards = 1;
+  } else if (window.innerWidth < 1000) {
+    numberOfCards = 2;
+  } else {
+    numberOfCards = 3;
+  }
+
+  for (let i = 0; i < numberOfCards; i++) {
     const index = (currentIndex + i) % products.length;
     const product = products[index];
 
@@ -68,6 +78,7 @@ function renderCarousel(products) {
     card.appendChild(title);
     card.appendChild(price);
     card.appendChild(button);
+
     carouselBox.appendChild(card);
   }
 }
@@ -166,3 +177,7 @@ async function fetchProducts() {
 }
 
 fetchProducts();
+
+window.addEventListener("resize", () => {
+  renderCarousel(carouselProducts);
+});

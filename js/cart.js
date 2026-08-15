@@ -1,11 +1,11 @@
+import { burgerMenu } from "./utils.js";
+
 /* DOM */
 const cartItems = document.querySelector(".cart-items");
 const subtotal = document.querySelector(".subtotal");
 const totalPrice = document.querySelector(".total-price");
 const clearCartButton = document.querySelector(".clear-cart-button");
 const cartSummary = document.querySelector(".cart-summary");
-const burgerMenu = document.querySelector(".burger-menu");
-const navMenu = document.querySelector("nav ul");
 const loginLink = document.querySelector("#login-link");
 
 if (localStorage.getItem("accessToken")) {
@@ -17,9 +17,7 @@ loginLink.addEventListener("click", () => {
   localStorage.removeItem("user");
 });
 
-burgerMenu.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
-});
+burgerMenu();
 
 /* Cart */
 const cart = JSON.parse(localStorage.getItem("cart")) || [];

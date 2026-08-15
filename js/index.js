@@ -1,3 +1,5 @@
+import { burgerMenu } from "./utils.js";
+
 /* API */
 const API_URL = "https://v2.api.noroff.dev/online-shop";
 
@@ -31,12 +33,8 @@ const nextButton = document.querySelector(".carousel-right");
 const loadingMessage = document.querySelector(".loading-message");
 const errorMessage = document.querySelector(".error-message");
 const loginLink = document.querySelector("#login-link");
-const burgerMenu = document.querySelector(".burger-menu");
-const navMenu = document.querySelector("nav ul");
 
-burgerMenu.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
-});
+burgerMenu();
 
 if (localStorage.getItem("accessToken")) {
   loginLink.textContent = "Logout";
@@ -50,6 +48,18 @@ loginLink.addEventListener("click", () => {
 /* Carousel State */
 let carouselProducts = [];
 let currentIndex = 0;
+
+function createProductButton(product) {
+  const button = document.createElement("button");
+  button.classList.add("secondary-button");
+  button.textContent = "View Product";
+
+  button.addEventListener("click", () => {
+    window.location.href = `product/index.html?id=${product.id}`;
+  });
+
+  return button;
+}
 
 /* Render Carousel */
 function renderCarousel(products) {
@@ -82,13 +92,7 @@ function renderCarousel(products) {
     const price = document.createElement("p");
     price.textContent = `$${product.price}`;
 
-    const button = document.createElement("button");
-    button.classList.add("secondary-button");
-    button.textContent = "View Product";
-
-    button.addEventListener("click", () => {
-      window.location.href = `product/index.html?id=${product.id}`;
-    });
+    const button = createProductButton(product);
 
     card.appendChild(image);
     card.appendChild(title);
@@ -147,13 +151,7 @@ function renderGridProducts(products) {
     const price = document.createElement("p");
     price.textContent = `$${product.price}`;
 
-    const button = document.createElement("button");
-    button.classList.add("secondary-button");
-    button.textContent = "View Product";
-
-    button.addEventListener("click", () => {
-      window.location.href = `product/index.html?id=${product.id}`;
-    });
+    const button = createProductButton(product);
 
     card.appendChild(image);
     card.appendChild(title);

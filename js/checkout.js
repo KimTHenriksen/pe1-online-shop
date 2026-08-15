@@ -1,15 +1,13 @@
+import { burgerMenu } from "./utils.js";
+
 const paymentForm = document.getElementById("payment-form");
 const message = document.querySelector(".message");
 const paypal = document.getElementById("paypal");
 const googlePay = document.getElementById("google-pay");
 const creditCard = document.getElementById("credit-card");
 const loginLink = document.querySelector("#login-link");
-const burgerMenu = document.querySelector(".burger-menu");
-const navMenu = document.querySelector("nav ul");
 
-burgerMenu.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
-});
+burgerMenu();
 
 if (localStorage.getItem("accessToken")) {
   loginLink.textContent = "Logout";

@@ -1,3 +1,5 @@
+import { burgerMenu } from "./utils.js";
+
 /* API */
 const API_URL = "https://v2.api.noroff.dev/online-shop";
 
@@ -18,12 +20,8 @@ const errorMessage = document.querySelector(".error-message");
 const cartMessage = document.querySelector(".cart-message");
 const cartCount = document.querySelector(".cart-count");
 const loginLink = document.querySelector("#login-link");
-const burgerMenu = document.querySelector(".burger-menu");
-const navMenu = document.querySelector("nav ul");
 
-burgerMenu.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
-});
+burgerMenu();
 
 if (localStorage.getItem("accessToken")) {
   loginLink.textContent = "Logout";

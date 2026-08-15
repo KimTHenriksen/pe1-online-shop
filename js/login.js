@@ -1,3 +1,5 @@
+import { burgerMenu } from "./utils.js";
+
 /* API */
 const API_URL = "https://v2.api.noroff.dev/auth/login";
 
@@ -7,12 +9,8 @@ const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 const loginMessage = document.querySelector("#loginMessage");
 const loginButton = document.querySelector("#loginButton");
-const burgerMenu = document.querySelector(".burger-menu");
-const navMenu = document.querySelector("nav ul");
 
-burgerMenu.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
-});
+burgerMenu();
 
 loginForm.addEventListener("submit", loginUser);
 

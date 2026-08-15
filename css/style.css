@@ -83,6 +83,17 @@ nav a {
   color: #111827;
 }
 
+.cart-link {
+  white-space: nowrap;
+}
+
+.cart-count {
+  color: #2563eb;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
 /* Main */
 main {
   padding: 0 3rem;

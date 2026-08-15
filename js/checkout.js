@@ -14,5 +14,5 @@ paymentForm.addEventListener("submit", function (event) {
 
   localStorage.removeItem("cart");
 
-  window.location.href = "../succes/index.html";
+  window.location.href = "../success/index.html";
 });

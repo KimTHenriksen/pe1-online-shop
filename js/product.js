@@ -16,6 +16,21 @@ const shareMessage = document.querySelector(".share-message");
 const loadingMessage = document.querySelector(".loading-message");
 const errorMessage = document.querySelector(".error-message");
 const cartMessage = document.querySelector(".cart-message");
+const cartCount = document.querySelector(".cart-count");
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let count = 0;
+
+  cart.forEach((item) => {
+    count += item.quantity;
+  });
+
+  cartCount.textContent = count;
+}
+
+updateCartCount();
 
 /* URL */
 const queryString = window.location.search;
@@ -127,6 +142,8 @@ addToCartButton.addEventListener("click", () => {
 
     localStorage.setItem("cart", JSON.stringify(cart));
   }
+
+  updateCartCount();
 
   cartMessage.textContent = "Product added";
 

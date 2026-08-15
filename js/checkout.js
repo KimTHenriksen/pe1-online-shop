@@ -3,6 +3,16 @@ const message = document.querySelector(".message");
 const paypal = document.getElementById("paypal");
 const googlePay = document.getElementById("google-pay");
 const creditCard = document.getElementById("credit-card");
+const loginLink = document.querySelector("#login-link");
+
+if (localStorage.getItem("accessToken")) {
+  loginLink.textContent = "Logout";
+}
+
+loginLink.addEventListener("click", () => {
+  localStorage.removeItem("accessToken");
+  localStorage.removeItem("user");
+});
 
 paymentForm.addEventListener("submit", function (event) {
   event.preventDefault();

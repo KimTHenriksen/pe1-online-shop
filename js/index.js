@@ -30,6 +30,16 @@ const previousButton = document.querySelector(".carousel-left");
 const nextButton = document.querySelector(".carousel-right");
 const loadingMessage = document.querySelector(".loading-message");
 const errorMessage = document.querySelector(".error-message");
+const loginLink = document.querySelector("#login-link");
+
+if (localStorage.getItem("accessToken")) {
+  loginLink.textContent = "Logout";
+}
+
+loginLink.addEventListener("click", () => {
+  localStorage.removeItem("accessToken");
+  localStorage.removeItem("user");
+});
 
 /* Carousel State */
 let carouselProducts = [];
@@ -41,7 +51,7 @@ function renderCarousel(products) {
 
   let numberOfCards;
 
-  if (window.innerWidth < 768) {
+  if (window.innerWidth <= 768) {
     numberOfCards = 1;
   } else if (window.innerWidth < 1000) {
     numberOfCards = 2;

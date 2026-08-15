@@ -17,6 +17,16 @@ const loadingMessage = document.querySelector(".loading-message");
 const errorMessage = document.querySelector(".error-message");
 const cartMessage = document.querySelector(".cart-message");
 const cartCount = document.querySelector(".cart-count");
+const loginLink = document.querySelector("#login-link");
+
+if (localStorage.getItem("accessToken")) {
+  loginLink.textContent = "Logout";
+}
+
+loginLink.addEventListener("click", () => {
+  localStorage.removeItem("accessToken");
+  localStorage.removeItem("user");
+});
 
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];

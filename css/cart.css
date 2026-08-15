@@ -2,11 +2,7 @@
 .cart-page {
   max-width: 1440px;
   margin: 0 auto;
-}
-
-.cart-page h1 {
-  text-align: center;
-  margin-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 .cart-box {
@@ -155,6 +151,6 @@
 
   .checkout-button {
     margin-top: 1rem;
-    margin-bottom: 0;
+    margin-bottom: 4rem;
   }
 }

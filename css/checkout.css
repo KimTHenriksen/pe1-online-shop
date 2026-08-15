@@ -83,7 +83,7 @@
   flex: 1;
 }
 
-.payment-form .primary-button {
+#payment-form .primary-button {
   margin-top: 1rem;
   align-self: center;
 }
@@ -103,7 +103,7 @@
     max-width: 100%;
   }
 
-  .payment-form .primary-button {
+  #payment-form .primary-button {
     width: 100%;
     align-self: stretch;
   }

@@ -192,7 +192,14 @@
     max-width: 16.25rem;
   }
 
-  .carousel-card img,
+  .carousel-card img {
+    width: 100%;
+    max-width: 14.25rem;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
   .product-card img {
     width: 14.25rem;
     height: 14.25rem;

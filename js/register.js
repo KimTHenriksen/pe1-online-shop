@@ -31,7 +31,7 @@ async function registerUser(event) {
   registerMessage.textContent = "";
 
   registerButton.disabled = true;
-  registerButton.textContent = "Registering..";
+  registerButton.textContent = "Registering...";
 
   const response = await fetch(API_URL, {
     method: "POST",

@@ -1,4 +1,4 @@
-import { burgerMenu } from "./utils.js";
+import { burgerMenu, loginLink } from "./utils.js";
 
 /* DOM */
 const cartItems = document.querySelector(".cart-items");
@@ -6,18 +6,9 @@ const subtotal = document.querySelector(".subtotal");
 const totalPrice = document.querySelector(".total-price");
 const clearCartButton = document.querySelector(".clear-cart-button");
 const cartSummary = document.querySelector(".cart-summary");
-const loginLink = document.querySelector("#login-link");
-
-if (localStorage.getItem("accessToken")) {
-  loginLink.textContent = "Logout";
-}
-
-loginLink.addEventListener("click", () => {
-  localStorage.removeItem("accessToken");
-  localStorage.removeItem("user");
-});
 
 burgerMenu();
+loginLink();
 
 /* Cart */
 const cart = JSON.parse(localStorage.getItem("cart")) || [];

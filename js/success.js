@@ -1,3 +1,4 @@
-import { burgerMenu } from "./utils.js";
+import { burgerMenu, loginLink } from "./utils.js";
 
 burgerMenu();
+loginLink();

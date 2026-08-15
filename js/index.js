@@ -1,4 +1,4 @@
-import { burgerMenu } from "./utils.js";
+import { burgerMenu, loginLink } from "./utils.js";
 
 /* API */
 const API_URL = "https://v2.api.noroff.dev/online-shop";
@@ -32,18 +32,9 @@ const previousButton = document.querySelector(".carousel-left");
 const nextButton = document.querySelector(".carousel-right");
 const loadingMessage = document.querySelector(".loading-message");
 const errorMessage = document.querySelector(".error-message");
-const loginLink = document.querySelector("#login-link");
 
 burgerMenu();
-
-if (localStorage.getItem("accessToken")) {
-  loginLink.textContent = "Logout";
-}
-
-loginLink.addEventListener("click", () => {
-  localStorage.removeItem("accessToken");
-  localStorage.removeItem("user");
-});
+loginLink();
 
 /* Carousel State */
 let carouselProducts = [];

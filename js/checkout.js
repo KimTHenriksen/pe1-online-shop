@@ -1,22 +1,13 @@
-import { burgerMenu } from "./utils.js";
+import { burgerMenu, loginLink } from "./utils.js";
 
 const paymentForm = document.getElementById("payment-form");
 const message = document.querySelector(".message");
 const paypal = document.getElementById("paypal");
 const googlePay = document.getElementById("google-pay");
 const creditCard = document.getElementById("credit-card");
-const loginLink = document.querySelector("#login-link");
 
 burgerMenu();
-
-if (localStorage.getItem("accessToken")) {
-  loginLink.textContent = "Logout";
-}
-
-loginLink.addEventListener("click", () => {
-  localStorage.removeItem("accessToken");
-  localStorage.removeItem("user");
-});
+loginLink();
 
 paymentForm.addEventListener("submit", function (event) {
   event.preventDefault();

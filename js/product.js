@@ -1,4 +1,4 @@
-import { burgerMenu } from "./utils.js";
+import { burgerMenu, loginLink } from "./utils.js";
 
 /* API */
 const API_URL = "https://v2.api.noroff.dev/online-shop";
@@ -19,18 +19,9 @@ const loadingMessage = document.querySelector(".loading-message");
 const errorMessage = document.querySelector(".error-message");
 const cartMessage = document.querySelector(".cart-message");
 const cartCount = document.querySelector(".cart-count");
-const loginLink = document.querySelector("#login-link");
 
 burgerMenu();
-
-if (localStorage.getItem("accessToken")) {
-  loginLink.textContent = "Logout";
-}
-
-loginLink.addEventListener("click", () => {
-  localStorage.removeItem("accessToken");
-  localStorage.removeItem("user");
-});
+loginLink();
 
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];

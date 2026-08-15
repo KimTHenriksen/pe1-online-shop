@@ -68,7 +68,6 @@ async function fetchProduct() {
     }
 
     const data = await response.json();
-    console.log(data);
 
     product = data.data;
 

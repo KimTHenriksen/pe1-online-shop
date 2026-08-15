@@ -185,8 +185,6 @@ async function fetchProducts() {
 
     loadingMessage.style.display = "none";
   } catch (error) {
-    console.error(error);
-
     loadingMessage.style.display = "none";
     errorMessage.style.display = "block";
   }

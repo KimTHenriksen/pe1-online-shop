@@ -120,6 +120,14 @@ nav a:hover {
   margin-left: 4px;
 }
 
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 /* Loading & error message */
 .loading-message,
 .error-message {
@@ -193,4 +201,28 @@ footer {
 footer p {
   margin: 0;
   font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul.open {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 4rem;
+    right: 0rem;
+    width: 150px;
+    z-index: 1000;
+    background-color: #f9ece5;
+    padding-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+  }
 }

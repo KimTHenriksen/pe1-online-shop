@@ -4,6 +4,12 @@ const subtotal = document.querySelector(".subtotal");
 const totalPrice = document.querySelector(".total-price");
 const clearCartButton = document.querySelector(".clear-cart-button");
 const cartSummary = document.querySelector(".cart-summary");
+const burgerMenu = document.querySelector(".burger-menu");
+const navMenu = document.querySelector("nav ul");
+
+burgerMenu.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+});
 
 /* Cart */
 const cart = JSON.parse(localStorage.getItem("cart")) || [];

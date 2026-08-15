@@ -31,6 +31,12 @@ const nextButton = document.querySelector(".carousel-right");
 const loadingMessage = document.querySelector(".loading-message");
 const errorMessage = document.querySelector(".error-message");
 const loginLink = document.querySelector("#login-link");
+const burgerMenu = document.querySelector(".burger-menu");
+const navMenu = document.querySelector("nav ul");
+
+burgerMenu.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+});
 
 if (localStorage.getItem("accessToken")) {
   loginLink.textContent = "Logout";

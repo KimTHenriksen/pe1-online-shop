@@ -8,6 +8,12 @@ const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 const registerMessage = document.querySelector("#registerMessage");
 const registerButton = document.querySelector("#registerButton");
+const burgerMenu = document.querySelector(".burger-menu");
+const navMenu = document.querySelector("nav ul");
+
+burgerMenu.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+});
 
 registerForm.addEventListener("submit", registerUser);
 

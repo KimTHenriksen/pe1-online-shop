@@ -61,12 +61,16 @@
   width: 18rem;
 }
 
-.carousel-card img {
-  width: 100%;
-  aspect-ratio: 1;
+.carousel-card img,
+.product-card img {
   object-fit: cover;
   border-radius: 0.5rem;
   margin: 0 auto 1rem;
+}
+
+.carousel-card img {
+  width: 100%;
+  aspect-ratio: 1;
 }
 
 .carousel-card h2,
@@ -136,9 +140,6 @@
 .product-card img {
   width: 228px;
   height: 228px;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  margin: 0 auto 1rem;
   cursor: pointer;
 }
 
@@ -197,7 +198,6 @@
     max-width: 14.25rem;
     height: auto;
     aspect-ratio: 1;
-    object-fit: cover;
   }
 
   .product-card img {

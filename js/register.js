@@ -44,7 +44,7 @@ async function registerUser(event) {
   const data = await response.json();
 
   registerButton.disabled = false;
-  registerButton.textContent = "Registering...";
+  registerButton.textContent = "Register";
 
   if (response.ok) {
     window.location.href = "login.html";

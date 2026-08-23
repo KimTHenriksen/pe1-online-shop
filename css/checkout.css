@@ -1,3 +1,4 @@
+/* Layout */
 .checkout-page {
   padding-top: 2rem;
 }
@@ -23,6 +24,7 @@
   margin-top: 0;
 }
 
+/* Form */
 .checkout-card label {
   display: block;
   margin-bottom: 0.5rem;
@@ -88,6 +90,7 @@
   align-self: center;
 }
 
+/* Responsive */
 @media (max-width: 700px) {
   .checkout-page {
     padding: 2rem 1rem;

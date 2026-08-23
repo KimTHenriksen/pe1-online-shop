@@ -1,5 +1,6 @@
 import { burgerMenu, loginLink } from "./utils.js";
 
+/* DOM */
 const paymentForm = document.getElementById("payment-form");
 const message = document.querySelector(".message");
 const paypal = document.getElementById("paypal");
@@ -9,6 +10,7 @@ const creditCard = document.getElementById("credit-card");
 burgerMenu();
 loginLink();
 
+/* Payment Form */
 paymentForm.addEventListener("submit", function (event) {
   event.preventDefault();
 

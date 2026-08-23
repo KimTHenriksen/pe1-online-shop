@@ -1,3 +1,4 @@
+/* General */
 .logo img {
   height: 40px;
   width: auto;
@@ -17,6 +18,7 @@ main {
   padding: 0 3rem;
 }
 
+/* Typography */
 h1,
 h2 {
   font-family: "Manrope", sans-serif;
@@ -204,6 +206,7 @@ footer p {
   font-size: 14px;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .burger-menu {
     display: block;

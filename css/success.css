@@ -1,3 +1,4 @@
+/* Layout */
 .success-page {
   display: flex;
   flex-direction: column;
@@ -27,9 +28,12 @@
   text-align: center;
 }
 
+/* Components */
 .success-card .primary-button {
   text-decoration: none;
 }
+
+/* Responsive */
 
 @media (max-width: 700px) {
   .success-page {

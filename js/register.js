@@ -15,6 +15,7 @@ burgerMenu();
 
 registerForm.addEventListener("submit", registerUser);
 
+/* Register User */
 async function registerUser(event) {
   event.preventDefault();
 

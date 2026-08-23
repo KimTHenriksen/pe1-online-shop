@@ -23,6 +23,7 @@ const cartCount = document.querySelector(".cart-count");
 burgerMenu();
 loginLink();
 
+/* Cart Count */
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -42,10 +43,9 @@ const queryString = window.location.search;
 const searchParams = new URLSearchParams(queryString);
 const productId = searchParams.get("id");
 
-/* Product */
+/* Fetch Product */
 let product;
 
-/* Fetch Product */
 async function fetchProduct() {
   loadingMessage.style.display = "block";
 

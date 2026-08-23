@@ -103,7 +103,6 @@
 }
 
 /* Product Grid */
-
 .products {
   max-width: 1200px;
   margin: 0 auto;
@@ -148,7 +147,7 @@
   margin-top: 1rem;
 }
 
-/* Tablet */
+/* Responsive */
 @media (min-width: 768px) and (max-width: 990px) {
   .carousel-card {
     width: 15rem;
@@ -168,7 +167,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   main {
     padding: 0 1rem;

@@ -10,8 +10,10 @@ const passwordInput = document.querySelector("#password");
 const loginMessage = document.querySelector("#loginMessage");
 const loginButton = document.querySelector("#loginButton");
 
+/* Navigation */
 burgerMenu();
 
+/* Login */
 loginForm.addEventListener("submit", loginUser);
 
 async function loginUser(event) {

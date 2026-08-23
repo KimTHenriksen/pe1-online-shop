@@ -40,6 +40,7 @@ loginLink();
 let carouselProducts = [];
 let currentIndex = 0;
 
+/* Create Product Button */
 function createProductButton(product) {
   const button = document.createElement("button");
   button.classList.add("secondary-button");
@@ -94,7 +95,7 @@ function renderCarousel(products) {
   }
 }
 
-/* Carousel Animate */
+/* Carousel Animation */
 function animateCarousel() {
   carouselBox.classList.add("fade");
 

@@ -16,9 +16,16 @@ Noroff API
 ## Links
 
 [Online Shop Website](https://kimthenriksen.github.io/pe1-online-shop/)
-[Figma Desktop Prototype](https://www.figma.com/proto/rCFoR4QNOFq6Zf82ZVgZKL/PE1-Online-Shop---Kim-T-Henriksen?node-id=70-888&t=VBx2y5gF1Bjnfdhr-1)
-[Figma Mobile Prototype](https://www.figma.com/proto/rCFoR4QNOFq6Zf82ZVgZKL/PE1-Online-Shop---Kim-T-Henriksen?node-id=41-1318&t=VBx2y5gF1Bjnfdhr-1)
+
+[Github repository] (https://github.com/KimTHenriksen/pe1-online-shop)
+
 [GitHub Project Board](https://github.com/users/KimTHenriksen/projects/4)
+
+[Figma Design File] (https://www.figma.com/design/rCFoR4QNOFq6Zf82ZVgZKL/PE1-Online-Shop---Kim-T-Henriksen?node-id=16-584&t=SdyybAHxQsQi2Fp7-1)
+
+[Figma Desktop Prototype](https://www.figma.com/proto/rCFoR4QNOFq6Zf82ZVgZKL/PE1-Online-Shop---Kim-T-Henriksen?node-id=70-888&t=VBx2y5gF1Bjnfdhr-1)
+
+[Figma Mobile Prototype](https://www.figma.com/proto/rCFoR4QNOFq6Zf82ZVgZKL/PE1-Online-Shop---Kim-T-Henriksen?node-id=41-1318&t=VBx2y5gF1Bjnfdhr-1)
 
 ## Test account for login
 
@@ -39,7 +46,7 @@ cartSummary.style.display = "none";
 }
 
 checkout.js
-The styling on my checkout page was not working. AI helped med find that I hade used the wrong selector in my CSS.
+The styling on my checkout page was not working. AI helped me find that I had used the wrong selector in my CSS.
 When I realised what I had missed, I changed:
 
 from: .payment-form

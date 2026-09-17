@@ -17,11 +17,11 @@ Noroff API
 
 [Online Shop Website](https://kimthenriksen.github.io/pe1-online-shop/)
 
-[Github repository] (https://github.com/KimTHenriksen/pe1-online-shop)
+[Github repository](https://github.com/KimTHenriksen/pe1-online-shop)
 
 [GitHub Project Board](https://github.com/users/KimTHenriksen/projects/4)
 
-[Figma Design File] (https://www.figma.com/design/rCFoR4QNOFq6Zf82ZVgZKL/PE1-Online-Shop---Kim-T-Henriksen?node-id=16-584&t=SdyybAHxQsQi2Fp7-1)
+[Figma Design File](https://www.figma.com/design/rCFoR4QNOFq6Zf82ZVgZKL/PE1-Online-Shop---Kim-T-Henriksen?node-id=16-584&t=SdyybAHxQsQi2Fp7-1)
 
 [Figma Desktop Prototype](https://www.figma.com/proto/rCFoR4QNOFq6Zf82ZVgZKL/PE1-Online-Shop---Kim-T-Henriksen?node-id=70-888&t=VBx2y5gF1Bjnfdhr-1)
 

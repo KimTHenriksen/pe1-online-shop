@@ -40,16 +40,19 @@ cart.js
 The loading message was showing when the cart was empty. AI helped me understand that I needed to add an if statement to check if the cart was empty.
 When I realised what I had missed, I added:
 
+```javascript
 if (cart.length === 0) {
-cartItems.textContent = "Your cart is empty.";
-cartSummary.style.display = "none";
+  cartItems.textContent = "Your cart is empty.";
+  cartSummary.style.display = "none";
 }
+```
 
 checkout.js
 The styling on my checkout page was not working. AI helped me find that I had used the wrong selector in my CSS.
 When I realised what I had missed, I changed:
 
 from: .payment-form
+
 to: #payment-form
 
 I tested it and the styling worked.
